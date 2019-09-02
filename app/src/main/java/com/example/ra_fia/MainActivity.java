@@ -11,7 +11,7 @@ import android.view.WindowManager;
 
 public class MainActivity extends Activity {
 
-    private  final int DURACION_SPLASH = 2000;
+    private  final int DURACION_SPLASH = 800;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
