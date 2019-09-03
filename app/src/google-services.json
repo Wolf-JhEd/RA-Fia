@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "589872131209",
+    "firebase_url": "https://ra-fia.firebaseio.com",
+    "project_id": "ra-fia",
+    "storage_bucket": "ra-fia.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:589872131209:android:4df9f3e69c93845c",
+        "android_client_info": {
+          "package_name": "com.example.ra_fia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "589872131209-lbrf8rf9i3ef5ne6idqfauj11ja8i4kv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ra_fia",
+            "certificate_hash": "4ccbbc604ae82e87090a7bfacc92a7b557d7fa0d"
+          }
+        },
+        {
+          "client_id": "589872131209-rq6310nn0kn02514s88jg46e2ec0ibhn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0cr3EExxtnDMWfGov5vS4nuIORSYDA0I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "589872131209-rq6310nn0kn02514s88jg46e2ec0ibhn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
