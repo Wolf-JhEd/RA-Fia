@@ -15,12 +15,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email"
+        android:textColor="#820405"
         />
     <EditText
         android:id="@+id/editexPassw"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
+        android:textColor="#820405"
         />
 
     <LinearLayout
