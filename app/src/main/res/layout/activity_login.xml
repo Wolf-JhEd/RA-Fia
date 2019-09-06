@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffff"
+    android:background="#8de0bb"
     android:orientation="vertical"
     android:padding="20dp"
     tools:context=".Login">
@@ -21,7 +21,8 @@
         android:id="@+id/editexPassw"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
         android:textColor="#820405"
         />
 
@@ -37,6 +38,28 @@
         android:text="INGRESAR "
         android:background="@color/colorAccent"
         android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/tvMsj"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="00dp"
+            android:layout_marginEnd="10dp"
+            android:text="No tienes una cuenta"
+            android:textAlignment="center"
+            android:textColor="#8C1028"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tvRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registrate"
+            android:textAlignment="center"
+            android:textColor="#ffff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
 
     </LinearLayout>
 </LinearLayout>
