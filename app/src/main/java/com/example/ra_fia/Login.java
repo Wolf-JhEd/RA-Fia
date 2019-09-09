@@ -4,10 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +31,8 @@ public class Login extends AppCompatActivity {
 
     private Button mbutonLogin;
 
+    private ProgressBar loginProgress;
+
     private TextView textRedirectRegister;
 
     //VARIABLES DE DATOS QUE SE REGISTRARA
@@ -37,6 +42,9 @@ public class Login extends AppCompatActivity {
     //VARIABLES DE FIREBASE
     private FirebaseAuth mAuth;
     private DatabaseReference database;
+
+    private Intent HomeActivity;
+    private ImageView loginPhoto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,14 +56,21 @@ public class Login extends AppCompatActivity {
 
         mbutonLogin=(Button)findViewById(R.id.btInicio);
 
+        loginProgress = findViewById(R.id.login_progress);
+
         textRedirectRegister=(TextView)findViewById(R.id.tvRegister);
 
         mAuth=FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance().getReference();
 
+        loginProgress.setVisibility(View.INVISIBLE);
         mbutonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                loginProgress.setVisibility(View.VISIBLE);
+                mbutonLogin.setVisibility(View.INVISIBLE);
+
                 email=edEmail.getText().toString();
                 password=edPassword.getText().toString();
 
@@ -63,6 +78,8 @@ public class Login extends AppCompatActivity {
                     loginUser();
                 }else{
                     Toast.makeText(Login.this, "Complete los  campos correctamente", Toast.LENGTH_SHORT).show();
+                    mbutonLogin.setVisibility(View.VISIBLE);
+                    loginProgress.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -71,6 +88,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Login.this, Register.class));
+                finish();
             }
         });
     }
@@ -80,11 +98,15 @@ public class Login extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    startActivity(new Intent(Login.this, Maps.class));
+                    loginProgress.setVisibility(View.INVISIBLE);
+                    mbutonLogin.setVisibility(View.VISIBLE);
+                    startActivity(new Intent(Login.this, Home.class));
                     getUserInfo();
                     finish();
                 }else{
                     Toast.makeText(Login.this, "No se puedo iniciar sesion, compruebe los datos", Toast.LENGTH_SHORT).show();
+                    mbutonLogin.setVisibility(View.VISIBLE);
+                    loginProgress.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -108,6 +130,16 @@ public class Login extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        if(mAuth.getCurrentUser() != null){
+            startActivity(new Intent(Login.this, Home.class));
+            finish();
+        }
     }
 
 }

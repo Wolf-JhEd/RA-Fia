@@ -10,18 +10,44 @@
     <ImageView
         android:layout_marginVertical="125dp"
         android:id="@+id/imageView12"
-        android:layout_width="wrap_content"
-        android:layout_height="225dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginStart="00dp"
+        android:layout_marginEnd="00dp"
         android:layout_marginBottom="200dp"
-        android:src="@drawable/logousmp" />
+        android:src="@drawable/logocolor" />
+    <TextView
+        android:id="@+id/tvRafia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="370dp"
+        android:layout_marginStart="00dp"
+        android:layout_marginEnd="10dp"
+        android:text="RA FIA"
+        android:textAlignment="center"
+        android:textSize="60sp"
+        android:textColor="#820405"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:id="@+id/tvNotas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="610dp"
+        android:layout_marginStart="00dp"
+        android:layout_marginEnd="10dp"
+        android:text="Asegúrate de estar cerca en la Universidad San Martín de Porres Facultad de Ingenieria y Arquitectura"
+        android:textAlignment="center"
+        android:textSize="15sp"
+        android:textColor="#983C45"
+        android:textStyle="bold"
+        />
 
     <pl.droidsonroids.gif.GifImageView
-        android:layout_marginVertical="380dp"
+        android:layout_marginVertical="480dp"
         android:id="@+id/gifImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="125dp"
+        android:layout_width="match_parent"
+            android:layout_height="100dp"
         android:layout_marginStart="100dp"
         android:layout_marginEnd="100dp"
         android:layout_marginBottom="200dp"
